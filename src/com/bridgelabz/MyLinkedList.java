@@ -60,6 +60,21 @@ public class MyLinkedList {
         return add;
     }
 
+    // Dequeue Method
+    public void dequeue() {
+
+        Node temp = head;
+        if(temp == null) {
+            System.out.println("Queue Is Empty");
+            return;
+        } else if (head.next == null) {
+            temp = null;
+        } else {
+            head = head.next;
+            temp = null;
+        }
+    }
+
     // Print Method
     public void print() {
 
