@@ -25,6 +25,7 @@ public class MyLinkedList {
         return temp.key;
     }
 
+    // Peak Method
     public void peak() {
 
         if(head == null) {
@@ -39,15 +40,36 @@ public class MyLinkedList {
         }
     }
 
+    //Enqueue Method
+    public boolean enqueue(int data) {
+
+        boolean add = false;
+        Node newNode = new Node(data);
+
+        if(head == null) {
+            head = newNode;
+            add = true;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            add = true;
+        }
+        return add;
+    }
+
     // Print Method
     public void print() {
 
         Node temp = head;
-        System.out.print("\nStack : ");
+        System.out.print("Queue : ");
 
         while (temp != null) {
             System.out.print(temp.key +"->");
             temp = temp.next;
         }
+        System.out.println();
     }
 }
